@@ -20,7 +20,6 @@ public class Tester {
             String inputFile = path + "test." + i + ".in";
             String outputFile = path + "test." + i + ".out";
 
-            // Попытка открыть файлы ввода и вывода
             try (BufferedReader inReader = new BufferedReader(new FileReader(inputFile));
                  BufferedReader outReader = new BufferedReader(new FileReader(outputFile))) {
 

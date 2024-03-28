@@ -6,11 +6,11 @@ import java.util.Arrays;
 public class MiddleHappyNumbers {
     private static long count = 0;
     public static void main(String[] args) {
-        for (int i = 1; i <= 1000; i++) {
+        for (int i = 2; i <= 5; i++) {
             long start = System.currentTimeMillis();
-            BigInteger res = luckyTickets(i);
+            luckyRecursive(i);
             long end = System.currentTimeMillis() - start;
-            System.out.println(i + " - Count: " + res + ", TimeMs: " + end);
+            System.out.println(i + " - Count: " + count + ", TimeMs: " + end);
             count = 0;
         }
     }
@@ -31,7 +31,7 @@ public class MiddleHappyNumbers {
         return result;
     }
 
-    // Функция для построения следующего массива из предыдущего
+    // TODO Функция для построения следующего массива из предыдущего
     private static long[] getNextArr(long[] prevArr) {
         int newLen = prevArr.length + 9; // Длина следующего массива будет больше на 9
         long[] arr = new long[newLen]; // Заготовка результата
@@ -68,7 +68,7 @@ public class MiddleHappyNumbers {
         }
     }
 
-    //рекурсивный счетчик количества одинкаовых сумм O(n) = 100 ^ n
+    //TODO рекурсивный счетчик количества одинкаовых сумм O(n) = 100 ^ n
     private static void luckyAbsRecursive(int n) {
         nextAbs(n, 0, 0);
     }
